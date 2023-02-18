@@ -24,7 +24,9 @@ open class HIDDeviceMonitor {
         let managerRef = IOHIDManagerCreate(kCFAllocatorDefault, IOOptionBits(kIOHIDOptionsTypeNone))
         var deviceMatches:[[String:Any]] = []
         for vp in self.vp {
-            var match = [kIOHIDProductIDKey: vp.productId, kIOHIDVendorIDKey: vp.vendorId]
+//            var match = [kIOHIDProductIDKey: vp.productId, kIOHIDVendorIDKey: vp.vendorId]
+          var match:[String: Int] = [:]
+          
             if let usagePage = vp.usagePage {
                 match[kIOHIDDeviceUsagePageKey] = usagePage
             }

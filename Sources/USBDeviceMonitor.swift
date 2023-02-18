@@ -24,8 +24,8 @@ open class USBDeviceMonitor {
             IONotificationPortSetDispatchQueue(notifyPort, DispatchQueue(label: "IODetector"))
             let matchingDict = IOServiceMatching(kIOUSBDeviceClassName)
                 as NSMutableDictionary
-            matchingDict[kUSBVendorID] = NSNumber(value: vp.vendorId)
-            matchingDict[kUSBProductID] = NSNumber(value: vp.productId)
+//            matchingDict[kUSBVendorID] = NSNumber(value: vp.vendorId)
+//            matchingDict[kUSBProductID] = NSNumber(value: vp.productId)
 
             let matchingCallback:IOServiceMatchingCallback = { (userData, iterator) in
                 // Convert self to a void pointer, store that in the context, and convert it
